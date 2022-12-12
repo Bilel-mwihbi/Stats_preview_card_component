@@ -1,0 +1,190 @@
+/* 
+  ===================
+    Table of contents: 
+      1- css reset 
+      2- layout
+      3- main picture component
+      4- main component
+      5- media queries
+  ====================
+  
+  *****************
+  1- css reset
+  *****************
+*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+:root {
+    --very-dark-blue:hsl(233, 47%, 7%);
+    --dark-desaturated-blue:hsl(244, 38%, 16%);
+    --soft-violet:hsl(277, 64%, 61%);
+    --white:hsl(0, 0%, 100%);
+    --transparent-white:hsla(0, 0%, 100%, 0.75);
+    --slightly-transparent-white:hsla(0, 0%, 100%, 0.6);
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+}
+html, body {
+    min-height: 100vh;
+}
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+img {
+    display: block; 
+    max-width: 100%;
+}
+/* 
+  *****************
+  2- layout
+  *****************
+*/
+body {
+    display:grid;
+    place-content: center;
+    padding: 1.5em;;
+    font-size: 0.9rem;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--very-dark-blue);
+}
+main {
+    overflow: hidden;
+    border-radius: 0.5em;
+    display:grid;
+    grid-template-areas: "picture" "content";
+}
+
+.main_picture {
+    grid-area: picture;
+    background-color: var(--soft-violet);
+}
+.main_component {
+    grid-area: content;
+}
+/* 
+  **********************
+  3- main picture component
+  ***********************
+*/
+.main_picture img {
+    mix-blend-mode: multiply;
+    opacity: 0.8;
+}
+/* 
+  *****************
+  4- main component
+    4-1 header
+    4-2 description
+    4-3 stats
+  ***************** 
+*/
+.main_component {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-desaturated-blue);
+}
+article > * {
+    margin-block: 1.5em;
+}
+article {
+    padding: 1em;
+    text-align: center;
+}
+/* ===================
+    header    
+   ===================
+*/
+.header h1 {
+    font-size: 1.5rem;
+    line-height: 1.1;
+}
+.header span {
+    color: var(--soft-violet);
+}
+.header,
+.stats span {
+    color: var(--white);
+}
+/* 
+  ===================
+   description     
+  ===================
+*/
+.description,
+.stats li {
+    color: var(--slightly-transparent-white);
+}
+/* 
+  ===================
+   stats    
+  ===================
+*/
+.stats ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+    padding: 0px;
+    gap: 1em;
+}
+.stats li {
+    letter-spacing: 2px;
+    max-width: 12ch;
+    text-transform: uppercase;
+}
+.stats span {
+    letter-spacing: normal;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+/* 
+  **********************
+  5- media queries
+  ***********************
+*/
+@media only screen and (min-width: 500px)  {
+    main {
+        max-width: 31.25rem;
+    }
+    .stats ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+@media only screen and (min-width: 730px)  {
+    main {
+        grid-template-areas: "content picture";
+        grid-template-columns: 1fr 1fr;
+        max-width: none;
+    }
+    article {
+        text-align: initial;
+    }
+    .stats ul {
+        justify-content: start;
+    }
+}
+@media only screen and (min-width: 992px)  {
+    main {
+        max-width: 62.5rem;
+    }
+    .header h1 {
+        font-size: 1.8rem;
+        line-height: 1.1;
+    }
+    article {
+        max-width: 44ch;
+    }
+    .stats {
+        margin-top: 4em;
+    }
+    .stats ul {
+        gap: 2.5em;
+     }
+}
