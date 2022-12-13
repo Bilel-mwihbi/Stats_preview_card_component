@@ -24,8 +24,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Frontend Mentor](https://your-solution-url.com)
-- Live Site URL: [GitHub Pages](https://your-live-site-url.com)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/stats-preview-card-component--e4VgYHC1v)
+- Live Site URL: [GitHub Pages](https://bilel-mwihbi.github.io/Stats_preview_card_component/)
 
 ## Author
 
