@@ -9,15 +9,15 @@
 </head>
 <body>
   <main>
-    <!-- main picture component -->
-    <picture class="main_picture">
+    <!-- picture component -->
+    <picture class="picture-component">
       <source media="(min-width: 600px)" srcset="images/image-header-desktop.jpg">
-      <source media="(min-width: 320px)" srcset="images/image-header-mobile.jpg">
-      <img src="images/image-header-mobile.jpg" alt="happy employees">
+      <!-- <source media="(min-width: 320px)" srcset="images/image-header-mobile.jpg"> -->
+      <img src="images/image-header-mobile.jpg" alt="" aria-hidden="true">
     </picture>
     <!-- main component -->
-    <div class="main_component">
-        <article>
+    <div class="main-component">
+        <div class="container">
           <div class="header">
             <h1>Get <span>insights</span> that help your business grow.</h1>
           </div>
@@ -32,7 +32,7 @@
               <li> <span>12m+</span>  queries</li>
             </ul>
           </div>
-        </article>
+        </div>
     </div>
   </main>
 </body>

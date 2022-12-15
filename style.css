@@ -3,7 +3,7 @@
     Table of contents: 
       1- css reset 
       2- layout
-      3- main picture component
+      3- picture component
       4- main component
       5- media queries
   ====================
@@ -55,22 +55,23 @@ main {
     overflow: hidden;
     border-radius: 0.5em;
     display:grid;
+    max-width: 31.25rem;
     grid-template-areas: "picture" "content";
 }
 
-.main_picture {
+.picture-component {
     grid-area: picture;
     background-color: var(--soft-violet);
 }
-.main_component {
+.main-component {
     grid-area: content;
 }
 /* 
   **********************
-  3- main picture component
+  3- picture component
   ***********************
 */
-.main_picture img {
+.picture-component img {
     mix-blend-mode: multiply;
     opacity: 0.8;
 }
@@ -82,17 +83,17 @@ main {
     4-3 stats
   ***************** 
 */
-.main_component {
+.main-component {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: var(--dark-desaturated-blue);
 }
-article > * {
+.container > * {
     margin-block: 1.5em;
 }
-article {
+.container {
     padding: 1em;
     text-align: center;
 }
@@ -149,9 +150,6 @@ article {
   ***********************
 */
 @media only screen and (min-width: 500px)  {
-    main {
-        max-width: 31.25rem;
-    }
     .stats ul {
         flex-direction: row;
         justify-content: center;
@@ -161,24 +159,22 @@ article {
     main {
         grid-template-areas: "content picture";
         grid-template-columns: 1fr 1fr;
-        max-width: none;
+        max-width: 70rem;
     }
-    article {
+    .container {
         text-align: initial;
+        max-width: 44ch;
     }
     .stats ul {
         justify-content: start;
     }
 }
 @media only screen and (min-width: 992px)  {
-    main {
-        max-width: 62.5rem;
-    }
     .header h1 {
         font-size: 1.8rem;
         line-height: 1.1;
     }
-    article {
+    .container {
         max-width: 44ch;
     }
     .stats {
@@ -186,5 +182,5 @@ article {
     }
     .stats ul {
         gap: 2.5em;
-     }
+     } 
 }
